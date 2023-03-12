@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('book_category', function (Blueprint $table) {
             $table->integer('book_id');
             $table->integer('category_id');
-            $table->foreign('book_id')->references('id')->on('books');
+            $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }

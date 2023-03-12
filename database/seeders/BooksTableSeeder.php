@@ -16,21 +16,25 @@ class BooksTableSeeder extends Seeder
     {
 
         // Faker instance
-        $faker = Faker::create();
+        $faker = Faker::create('en_US');
 
         // Fetch last inserted id from the DB
         $lastInsetedId = DB::table('books')->max('id');
 
         // Starting from the last id, we insert 10 new book data in the DB
         for ($i = $lastInsetedId; $i < $lastInsetedId + 10; $i++) {
+
+            $imageName = $faker->image('public/images' ,300,500);
+            $imagePath = str_replace('public/','',$imageName);
+
             DB::table('books')->insert(
                 [
                     "id" => $i + 1,
-                    "isbn" => $faker->isbn13(),
-                    "title" => $faker->sentence(),
+                    "title" => $faker->text(20),
                     "author" => $faker->name(),
                     "published_date" => $faker->dateTimeThisDecade('+5 years'),
                     "description" => $faker->paragraph(2),
+                    "picture" => $imagePath,
                     "price" => $faker->randomFloat(2, 10, 200),
                     "created_at" => $faker->date(),
                     "updated_at" => $faker->date(),

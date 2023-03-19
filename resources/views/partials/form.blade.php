@@ -13,7 +13,21 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Title</span>
                         </div>
-                        <input type="text" class="form-control" name="title" value="{{isset($book) ? $book->title : ''}}" required>
+                        <input type="text" class="form-control" name="title" value="{{isset($book) ? $book->title : ''}}" placeholder="Book's Title" required>
+                    </div>
+                    <div class="col input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Genre</span>
+                        </div>
+                        <select name="categoryId" class="form-select d-inline w-75">
+                            @if(isset($category))
+                            <option value="{{$category->id}}" hidden>{{$category->name}}</option>
+                            @endif
+                            <option value="none">--- None ---</option>
+                            @foreach($categories as $category)
+                            <option value="{{$category->id}}">{{$category->name}}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="row mt-2">
@@ -21,13 +35,13 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Author</span>
                         </div>
-                        <input type="text" class="form-control" name="author" value="{{isset($book) ? $book->author : ''}}" required>
+                        <input type="text" class="form-control" name="author" value="{{isset($book) ? $book->author : ''}}" placeholder="Book's Author" required>
                     </div>
                     <div class="col input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text">$</span>
                         </div>
-                        <input type="number" class="form-control" name="price" value="{{isset($book) ? $book->price : ''}}" step="any" required>
+                        <input type="number" class="form-control" name="price" value="{{isset($book) ? $book->price : 0 }}" step="any" required>
                     </div>
                 </div>
                 <div class="row mt-2">

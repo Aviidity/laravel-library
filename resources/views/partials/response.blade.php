@@ -1,7 +1,7 @@
 @extends('layouts.welcome')
 @section('content')
 @if($status == 200)
-<div class="alert alert-info my-5">
+<div class="alert alert-success my-5">
   <h4>{{$msg}}</h4>
   <p>Redirecting to another page in 5 seconds...</p>
   <script>

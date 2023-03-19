@@ -2,8 +2,8 @@
 @section('content')
 <div class="card shadow flex-row my-4 p-2 rounded-4">
     <img src="{{URL($book->picture)}}" alt="cover" class="card-img-top rounded-4 d-inline bg-dark" style="width: 380px; height: 550px; object-fit: cover;">
-    <div class="card-body position-relative px-5 bg">
-        <h1 class="card-title my-1  ">
+    <div class="card-body position-relative px-5">
+        <h1 class="card-title">
             {{$book->title}}
             <span class="text-primary">{{$book->price}}$</span>
         </h1>

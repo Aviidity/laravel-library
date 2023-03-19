@@ -13,9 +13,6 @@
             <a class="nav-link mx-2" href="/books">Books</a>
           </li>
         </ul>
-      <form action="/books/create" class="d-flex fixed-end" method="GET">
-        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Create Book</button>
-      </form>
     </div>
   </div>
 </nav>

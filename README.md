@@ -62,7 +62,9 @@ Run the database seeder
 - **index** - Returns all the books and categories fetched from the database in the `list.blade.php` template.
 - **show** - Retrieves the book details to the `info.blade.php` template based on the route parameter.
 - **create** - Renders the `form.blade.php` template without book data.
-- **edit** -Renders the `form.blade.php` template with the book details based on the route parameter.
+- **store** - Save the client data as a Book in the database.
+- **edit** - Renders the `form.blade.php` template with the book details based on the route parameter.
+- **update** - Updates the book with the new client data in the database. 
 
 
 

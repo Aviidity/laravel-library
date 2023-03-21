@@ -1,6 +1,6 @@
 # BOOK MANAGER
 
-A Laravel project that manages a simple CRUD for a Library
+A Laravel project that manages a simple Library with CRUD
 
 ## Development Setups
 
@@ -39,7 +39,7 @@ Run the database seeder
     
 # Code overview
 
-### Folders
+## Folders
 
 - `app/Http/Controllers` - Contais all the controllers
 - `public/images` - Contains all books cover images
@@ -49,7 +49,7 @@ Run the database seeder
 - `routes` - Contains all the routes defined in web.php file
 - `storage/logs` - Contains all the logs
 
-#### Views 
+### Views 
 
 - `form.blade.php` - A tempalte form to *create* and *update* the books
 - `header.blade.php` - A template that renders the navigation bar
@@ -57,14 +57,37 @@ Run the database seeder
 - `list.blade.php` - A template that renders all the books
 - `response.blade.php` - A template that renders the server response message
 
-#### Controller (BookController.php)
+### Controller (BookController.php)
 
-- **index** - Returns all the books and categories fetched from the database in the `list.blade.php` template.
-- **show** - Retrieves the book details to the `info.blade.php` template based on the route parameter.
-- **create** - Renders the `form.blade.php` template without book data.
-- **store** - Save the client data as a Book in the database.
-- **edit** - Renders the `form.blade.php` template with the book details based on the route parameter.
-- **update** - Updates the book with the new client data in the database. 
+- **Index - Method GET**
 
+Retrieves all the books and categories fetched from the database for the `list.blade.php` template.
+Retrieves all the books that match or is similar to the searched name inserted in the searchbar.
+Retrieves all the books where genre equals to the selected value in the list.
+
+- **show** - Method GET**
+
+Retrieves the book details for the `info.blade.php` template based on the route parameter ID.
+Retrieves all the categories.
+
+- **create** - Method GET**
+
+Renders the `form.blade.php` template without any book details.
+
+- **store** - Method POST**
+
+Creates a Book
+
+- **edit** - Method GET**
+
+Renders the `form.blade.php` template with the book details based on the route parameter ID.
+
+- **update** - Method PUT**
+
+Updates the book with the new client data in the database. 
+
+- **delte** - Method DELETE**
+
+Delete the book
 
 
